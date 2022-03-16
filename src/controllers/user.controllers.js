@@ -15,7 +15,7 @@ rout.post("/",
 async (req,res)=>{
     try{
         const user=await users.create(req.body);
-        res.status.send(user);
+        res.status(201).send(user);
     }catch(err){
         return res.status(500).send({message:err.message});
     }
